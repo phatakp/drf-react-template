@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.5d427c15.css","mappings":"AAAA,EAGE,qBAAsB,CACtB,8BAAkC,CAHlC,QAAS,CACT,SAAU,CAGV,uBACF","sources":["index.css"],"sourcesContent":["* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n  font-family: \"Poppins\", sans-serif;\r\n  transition: all 0.3s ease;\r\n}\r\n"],"names":[],"sourceRoot":""}
