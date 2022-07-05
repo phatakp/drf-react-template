@@ -29,13 +29,21 @@ DEBUG_TOOLBAR_PANELS = [
 
 INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
+# With Postgres
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql_psycopg2",
+#         "NAME": getenv("DBNAME"),
+#         "USER": getenv("DBUSER"),
+#         "PASSWORD": getenv("DBPWD"),
+#         "HOST": "localhost",
+#     }
+# }
+
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": getenv("DBNAME"),
-        "USER": getenv("DBUSER"),
-        "PASSWORD": getenv("DBPWD"),
-        "HOST": "localhost",
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "db.sqlite3",
     }
 }
 
