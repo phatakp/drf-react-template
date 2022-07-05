@@ -132,9 +132,9 @@ DEBUG = str(getenv("DEBUG")) == "True"
 ALLOWED_HOSTS = []
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 STATIC_ROOT = PROJECT_ROOT / "static"
-MEDIA_URL = "media/"
+MEDIA_URL = "/media/"
 STATIC_ROOT = PROJECT_ROOT / "media"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
