@@ -26,7 +26,7 @@ SITE_NAME = basename(SETTINGS_ROOT)
 STATICFILES_DIRS = [PROJECT_ROOT / "staticfiles"]
 
 # Template Directory
-TEMPLATE_DIR = [PROJECT_ROOT / "templates"]
+TEMPLATE_DIR = PROJECT_ROOT / "templates"
 
 
 # add apps/ to the Python path
@@ -54,7 +54,7 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "apis.users.apps.UsersConfig",
+    "users.apps.UsersConfig",
 ]
 
 AUTH_USER_MODEL = "users.User"
@@ -147,9 +147,13 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
-    "EXCEPTION_HANDLER": "drf_standardized_errors.exception_handler",
+    "EXCEPTION_HANDLER": "drf_standardized_errors.handler.exception_handler",
 }
-DRF_STANDARDIZED_ERRORS = {"ENABLE_IN_DEBUG_FOR_UNHANDLED_EXCEPTIONS": True}
+DRF_STANDARDIZED_ERRORS = {
+    "EXCEPTION_HANDLER_CLASS": "drf_standardized_errors.handler.ExceptionHandler",
+    "EXCEPTION_FORMATTER_CLASS": "drf_standardized_errors.formatter.ExceptionFormatter",
+    "ENABLE_IN_DEBUG_FOR_UNHANDLED_EXCEPTIONS": True,
+}
 
 # JWT Settings
 SIMPLE_JWT = {
